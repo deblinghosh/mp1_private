@@ -6,7 +6,7 @@ def tokens_lowercase(doc):
     #performs stemming and creates trigrams (name the final call to ana.analyze as "trigrams")
     tok = metapy.analyzers.ICUTokenizer(suppress_tags=True)
     tok = metapy.analyzers.LowercaseFilter(tok)
-    tok = metapy.analyzers.LengthFilter(tok, min=3, max=5)
+    tok = metapy.analyzers.LengthFilter(tok, min=2, max=5)
     ana = metapy.analyzers.NGramWordAnalyzer(3, tok)
     trigrams = ana.analyze(doc)
     
